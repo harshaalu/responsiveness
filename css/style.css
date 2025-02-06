@@ -2,26 +2,23 @@
 		/*Grid Specific*/
 
 	  /*General Styline*/
-	  display: grid;
-	  grid-template-rows: repeat(5, 1fr);
-	  gap: 10px;
 	  background-color: #2196F3;
 	  background-image: url('../imgs/background.jpg');
-	  padding: 20px;
-	  width: 600px;
+	  padding: 10px;
+	  width:90%;
 	  height: 80vh;
 	  text-align: center;
 	  font-size: 30px;
 	  border: 3px solid black;
 	  border-radius: 25px;
-	  margin: 20px auto;
+	  margin: 0 auto;
 }
 
 
 .grid > div {
 	  background-color: rgba(255, 255, 255, 0.8);
 	  text-align: center;
-	  padding: 10px;
+	  padding: 5px;
 	border: 2px solid black;
 	  font-size: 30px;
 }
@@ -48,8 +45,17 @@ img{
 
 .grid{
 	display: grid;
-	gap: 5px;
-	grid-template-columns: 500px;
+  	grid-template-rows: repeat(5, 1fr); 
+  	gap: 10px; 
+  	background-color: #2196F3; 
+  	padding: 20px; 
+  	width: 600px; 
+  	height: 80vh;
+  	text-align: center;
+  	font-size: 30px;
+ 	border: 3px solid black;
+  	border-radius: 25px;
+  	margin: 20px auto; 
 
 	/* Play with: */
 	/* justify-content:; */
@@ -69,12 +75,20 @@ img{
 
 	.grid > div{
 		max-height:none;
+		background-color: rgba(255, 255, 255, 0.8); 
+  		text-align: center;
+  		padding: 10px; 
+  		border: 2px solid black;
+  		font-size: 30px;
 	}
 
 	/* Make this a two column grid. */
 	.grid{
-
-
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: center;
+		align-items: center;
+		
 		
 		/* Play with: */
 		/* justify-content:; */
@@ -86,14 +100,14 @@ img{
 
  	.item1{
  		 /* Span the entire first row  */
-		
+	grid-column: 1 / -1;
 		  /* grid-column: ; */
  	}
 	
 	.item2{
 		/* Start in row 2 and span 3 rows */
 		/* grid-row:; */
-
+	grid-row: 2 / 5;
 	}
 
 }
@@ -104,13 +118,15 @@ img{
 
 	/* Make this a three column grid using fr. */
 	.grid{
-
+		display: grid;
+        grid-template-columns: repeat(3, 1fr); 
 		/* Why don't we bother with justify here? */
 	}
 	.item3{
 		/* Start in row 2 and span two rows 
 		   Start in column 2 and span two columns */
-
+		   grid-row: 2 / 4; /* Spans two rows from second */
+		   grid-column: 2 / 4;
 
 		/* What happens if you try to span 3 columns */
 	}
